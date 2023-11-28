@@ -1,39 +1,33 @@
 import './styles/reset.css';
 import './styles/main.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 
 import Navbar from './components/navbar/Navbar';
-import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import Project from './../src/pages/Project';
+import Contacts from './pages/Contacts';
+
+import ScrollToTop from './utils/scrollToTop';
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      
-      <Header /> 
-      
-    
-   
+      <Router>
+        <ScrollToTop/>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/project/:id" element={<Project />} />
+          <Route path="/contacts" element={<Contacts/>} />
+        </Routes>
 
-    <main className="section">
-        <div className="container">
-
-                <ul className="content-list">
-                    <li className="content-list__item">
-                        <h2 className="title-2">Frontend</h2>
-                        <p>JavaScript, TypeScript, ReactJS, Angular, Redux, HTML, CSS, NPM, BootStrap, MaterialUI, Yarn, TailwindCSS, StyledComponents</p>
-                    </li>
-                    <li className="content-list__item">
-                        <h2 className="title-2">Backend</h2>
-                        <p>NodeJS, MySQL, MongoDB, PHP, Laravel</p>
-                    </li>
-                </ul>
-
-        </div>
-    </main>
-
-     <Footer/>
+        <Footer/>
+      </Router>
+     
     </div>
   );
 }
