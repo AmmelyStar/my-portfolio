@@ -2,13 +2,12 @@ import BtnGitHub from '../components/btnGitHub/BtnGitHub';
 import img from './../img/projects/02-big.jpg'
 
 import { useParams } from 'react-router-dom';
-
 import { projects } from '../helpers/projectsList';
 
 const Project = () => {
     const { id } = useParams();
     const project = projects[id];
-    console.log(project)
+    
     return ( 
         <main className="section">
         <div className="container">
