@@ -1,6 +1,4 @@
 import BtnGitHub from '../components/btnGitHub/BtnGitHub';
-import img from './../img/projects/02-big.jpg'
-
 import { useParams } from 'react-router-dom';
 import { projects } from '../helpers/projectsList';
 
